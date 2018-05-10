@@ -29,8 +29,14 @@ shinyUI(navbarPage(
       mainPanel(
         plotlyOutput("map")
       )
-    )
-  )
+      
+# Create a tabPanel to show your scatter plot
 
-  # Create a tabPanel to show your scatter plot
-))
+),
+tabPanel("Plot", titlePanel("Scatter Plot"), sidebarLayout(sidebarPanel(textInput
+                                                                        ("state", label = h3("State"), value = "enter the state...")
+),
+mainPanel(plotlyOutput("scatter")) 
+
+          ) )))
+)
